@@ -13,8 +13,23 @@ class Turn {
   }
 
   evaluateGuess() {
-    
+    if(this.guess === this.currentCard.correctAnswer) {
+      this.guess = true
+    } else {
+      this.guess = false
+    }
+    return //this.guess
   }
+
+  giveFeedback() {
+    this.evaluateGuess()
+    if(this.guess) {
+      return 'correct!'
+    } else {
+      return 'incorrect!'
+    }
+  }
+
 }
 
 
