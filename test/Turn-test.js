@@ -48,11 +48,11 @@ describe('Turn', function() {
     turn1.returnCard()
     turn2.returnCard()
 
-    expect(turn1.currentCard).to.deep.equal({ "id": 1,
+    expect(turn1.card).to.deep.equal({ "id": 1,
       "question": "What allows you to define a set of related information using key-value pairs?",
       "answers": ["object", "array", "function"],
       "correctAnswer": "object"})
-    expect(turn2.currentCard).to.deep.equal({ "id": 1,
+    expect(turn2.card).to.deep.equal({ "id": 1,
       "question": "What allows you to define a set of related information using key-value pairs?",
       "answers": ["object", "array", "function"],
       "correctAnswer": "object"})
