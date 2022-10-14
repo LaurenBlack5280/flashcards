@@ -9,20 +9,7 @@ describe('Turn', function() {
   let turn1
   //let turn2
   beforeEach(function () {
-    // card1 = new Card ({
-    //   "id": 1,
-    //   "question": "What allows you to define a set of related information using key-value pairs?",
-    //   "answers": ["object", "array", "function"],
-    //   "correctAnswer": "object"
-    // })
-    /*
-    {
-      "id": 2,
-      "question": "What is a comma-separated list of related values?",
-      "answers": ["array", "object", "function"],
-      "correctAnswer": "array"
-    }
-    */
+
     card1 = new Card (1, "What allows you to define a set of related information using key-value pairs?",
     ["object", "array", "function"], "object")
 
