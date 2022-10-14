@@ -25,39 +25,65 @@ describe('Round', function() {
       ["mutator method", "accessor method", "iteration method"], "mutator method")
 
     turn1 = new Turn("object", card1)
+    console.log('test', turn1)
     turn2 = new Turn("function", card1)
 
     deck = new Deck([card1, card2, card3])
 
     round = new Round(deck)
   })
-  it('should be an instance of deck', function () {
+  it('should be an instance of round', function () {
 
     expect(round).to.be.an.instanceof(Round)
   })
-  /*** need at least 10 tests
 
+  it('should have access to the deck', function() {
+
+    expect(round.deck.cards).to.deep.equal([card1, card2, card3])
+  })
+
+  it('should return current card', function() {
+
+    round.returnCurrentCard()
+    expect(round.currentCard).to.deep.equal(card1)
+  })
+
+  it('should have default of 0 on turns property', function() {
+
+    expect(round.turns).to.equal(0)
+  })
+
+  it('should keep a list of incorrectGuesses', function() {
+
+    expect(round.incorrectGuesses).to.deep.equal([])
+  })
+
+  it('should keep track of turns', function() {
+
+    round.takeTurn()
+    expect(round.turns).to.equal(1)
+  })
+
+  it('should give feedback about guess', function() {
+
+console.log('2', turn1)
+    expect(round.takeTurn('object')).to.equal('correct!')
+  })
+  /*** need at least 10 tests
   input (argument)- guesses
+    instructions say takes in guesses
+    but, the example takes in the entire Deck
+    sup wit dat?
   record each guess
     if correct, push guess into array of correct
       guesses
     incorrect, push into incorrect guess list
   currentCard should be first card in deck at start
 
-
-  round.deck - property => [card1, card2, card3];
-  round.currentCard *** add property that keeps
-    track of the current card, default first
-    card in deck --> card at index 0 of deck
-  round.returnCurrentCard() -method =>
-  round.turns -property
+  round.turns -property***  to hold numberof guesses, default 0
   round.incorrectGuesses
-  round.correctGuesses
-  round.numGuesses *** add property to hold number
-    of guesses, default 0
-  round.getNumGuesses()*** add method that increments
-    by 1 on each guess.
-    round.calculatePercentCorrect
+  ?round.correctGuesses
+  round.calculatePercentCorrect
   ***/
 
 })
